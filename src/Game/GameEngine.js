@@ -8,25 +8,20 @@ import { LuRepeat2 } from "react-icons/lu";
 function GameEngine() {
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
-  const [currentAttempt, setCurrentAttempt] = useState(1);
   const [fightOutcome, setFightOutcome] = useState('');
   const [character, setCharacter] = useState({ health: 100 });
   const [recharged, setRecharged] = useState(false);
 
-  const currentChapter = gameData.chapters[currentChapterIndex];
-  const isAlive = character.health > 0;
-
   const goToChapter = (goto) => {
     setRecharged(false);
     setCurrentRoundIndex(0);
-    setCurrentAttempt(1);
     if (goto === "next") {
       setFightOutcome('');
       setCurrentChapterIndex(currentChapterIndex + 1);
     } else if (goto === "end") {
       setFightOutcome('');
       setCurrentChapterIndex(0);
-      setCurrentAttempt(0);
+  
       setCharacter({ health: 100 });
     }
   } 
@@ -41,19 +36,19 @@ function GameEngine() {
       let characterHealth = health < 0 ? 0 : health;
       setCharacter({ health: characterHealth });
     }
-    setCurrentAttempt(currentAttempt + 1);
   };
 
   const rechargeHealth = () => {
     if (recharged === true)
        return;
 
-    const rechargedHealth = character.health + currentChapter.recharge;
-    const health = rechargedHealth > 100 ? 100 : rechargedHealth;
-    setCharacter({ health: health });
+    setCharacter({ health: character.health + currentChapter.recharge });
     setRecharged(true);
   };
 
+  const currentChapter = gameData.chapters[currentChapterIndex];
+  const hasMoreChapters = gameData.chapters[currentChapterIndex + 1];
+  const isAlive = character.health > 0;
   const inFightWithRound = currentChapter.fight && currentChapter.fight.rounds[currentRoundIndex];
 
   return (
@@ -66,14 +61,14 @@ function GameEngine() {
                   <div class="col-md-10 col-lg-8 col-xl-7">
                     <h2 class="section-heading">Chapter {currentChapterIndex + 1}</h2>
                     <p>{isAlive ? fightOutcome || currentChapter.text : gameData.mainCharacterDeathScene}</p>
-                    
+                    {isAlive && recharged && (<p>Your health increased with {currentChapter.recharge}</p>)}
                     <p>
                     {isAlive && inFightWithRound && inFightWithRound.attack_options && (
                       <div>
-                        <h4>Fight! Round {currentAttempt}</h4>
+                        <h4>Fight!</h4>
                         <ul>
                         {inFightWithRound.attack_options.map((attack, index) => (
-                          <li>{attack.name} <a href="/#" onClick={() => handleAttack(attack)}>Use this attack</a></li>
+                          <li>{attack.name} <a onClick={() => handleAttack(attack)}>Use this attack</a></li>
                         ))}
                         </ul>
                         </div>
@@ -81,9 +76,9 @@ function GameEngine() {
                     </p>
                   <p>
                     <ul>
-                      {!isAlive && (<li><span><a href="/#" onClick={() => goToChapter("end")}>Start over</a> <LuRepeat2/></span></li>)}
-                      {isAlive && currentChapter.recharge && (<li><span><a href="/#" onClick={rechargeHealth}>Take time to recover</a> <RiWaterFlashFill color="green" /></span></li>)}
-                      {isAlive && !inFightWithRound && (<li><a href="/#" onClick={() => goToChapter("next")}>Go to next chapter</a> <TbPlayerTrackNextFilled /> </li>)}
+                      {!isAlive || !hasMoreChapters && (<li><span><a onClick={() => goToChapter("end")}>Start over</a> <LuRepeat2/></span></li>)}
+                      {isAlive && currentChapter.recharge && (<li><span><a onClick={rechargeHealth}>Take time to recover</a> <RiWaterFlashFill color="green" /></span></li>)}
+                      {isAlive && !inFightWithRound && hasMoreChapters && (<li><a onClick={() => goToChapter("next")}>Go to next chapter</a> <TbPlayerTrackNextFilled /> </li>)}
                     </ul>
                   </p>
               </div>

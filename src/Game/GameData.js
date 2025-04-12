@@ -1,138 +1,123 @@
 const gameData = {
-	desciption: 'a villain, the main character, wants to destroy the world for some reason and superheroes wants to stop him.',
-    title: 'Dreadlord Nexus',
-	mainCharacterDeathScene: 'With a final, rattling breath, Dreadlord Nexus watched as the energy he had sought to control spiraled out of his grasp, the chaotic forces tearing him apart from the inside out. His last thought was a bitter realization that even in destruction, he was merely a vessel.',
-    chapters:[
-        {
-            text: "Born into a society that celebrated conformity and suppressed individuality, Kael felt like a glitch in the system. His unique talents and perspectives were met with fear and rejection. Witnessing the systematic crushing of creativity and the blind obedience to flawed leaders, he concluded that the world itself was fundamentally broken. He resolved to shatter this stagnant reality and build a new one from the ashes, a world where true potential could flourish, even if it meant a painful reset.",
-            goto: "next"
-        },
-        {
-            text: "Across the shattered skyline, Spider-Man landed with a thud, his eyes narrowed behind his mask. 'Nexus!' he called out, his voice strained with urgency. 'Stop this madness! There's still time to change!' Dreadlord Nexus floated above the destruction, a malevolent grin spreading across his face. 'Change? Little spider, this world is beyond saving. Only through its annihilation can true order be established.'",
-            fight: {
-				opponentAtackPower: 8,
-                rounds: [
-                    {
-                        attack_options: [
-                            { name: 'Web Swing Kick (A swift kick delivered while swinging)', sucess: false, outcome: 'Nexus swats Spider-Man away with a telekinetic blast. Spider-Man stumbles back, taking 8 damage.' },
-							{ name: 'Web Line Trip (A quick web line aimed at the legs)', sucess: false, outcome: 'Nexus phases through the web line, a dark energy aura shimmering around him. He retaliates with a shadowy tendril, striking Spider-Man for 8 damage.' },
-							{ name: 'Sticky Web Grenade (A small grenade that releases a large amount of sticky webbing)', sucess: true, outcome: 'The web grenade explodes, encasing Nexus in a thick layer of webbing, momentarily immobilizing him.' },
-							{ name: 'Spider-Sense Dodge (Reacting to an incoming attack with agility)', sucess: true, outcome: 'Spider-Man\'s senses tingle, allowing him to narrowly evade a blast of dark energy.' }
+    title: 'Oblivion Protocol',
+	introduction: 'The world trembles before you, the architect of its impending doom. For too long, humanity has festered, a blight upon the natural order. Now, as the formidable villain, you will unleash your ultimate plan to cleanse this world, and no hero, not even the vaunted Marvel champions, will stand in your way. This is your turn-based saga of destruction. Choose wisely, for the fate of all realities hangs in the balance.',
+	mainCharacterDeathScene: 'With a final, ragged breath, you survey the chaos wrought by your hand. The world burns, a testament to your ambition. But a searing pain pierces through you – a final, desperate strike from a fallen foe. As darkness encroaches, a grim satisfaction washes over you. They may have stopped you, but the world will never be the same. Your legacy is etched in fire and ruin.',
+    chapters:[
+        {
+            text: "Born into a world choked by its own progress, you witnessed firsthand the relentless expansion of humanity, consuming the wild and silencing the ancient. The so-called heroes lauded this growth, blind to the festering wound it inflicted upon the planet. A seed of resentment grew, blossoming into a conviction: only by tearing down their fragile civilization can the world truly heal. You have gathered arcane knowledge and harnessed forgotten energies, preparing for theGreat Scourge – a wave of destruction that will reset the balance, even if it means the heroes' futile resistance.",
+        },
+        {
+            text: "The echoing steel canyons of Manhattan become your first stage. Spider-Man swings into view, his youthful face a mask of defiance against your imposing figure amidst the terrified fleeing masses. The air crackles with tension as the web-slinger prepares to defend his city.",
+            fight: {
+				opponentAtackPower: 15,
+                rounds: [
+                    {
+                        attack_options: [
+                            { name: 'Venomous Strike', sucess: true, outcome: 'Your mutated tendril lashes out, striking Spider-Man with surprising speed. He cries out as a potent neurotoxin courses through his veins, momentarily weakening him. He stumbles back, clutching his arm.' },
+                            { name: 'Deceptive Illusion', sucess: false, outcome: 'You conjure a fleeting image of collapsing skyscrapers, hoping to disorient your foe. But Spider-Man’s senses are too sharp; he sees through the mirage. He fires a web line, pulling himself towards you and delivering a sharp kick to your chest, dealing 12 damage.' },
+                            { name: 'Psychic Onslaught', sucess: false, outcome: 'You attempt to overload Spider-Man’s mind with raw psychic energy. He winces, but his mental fortitude holds. He retaliates with a rapid-fire web net, ensnaring your limbs momentarily, dealing 12 damage.' },
+                            { name: 'Ground Tremor', sucess: false, outcome: 'You slam your fist into the ground, hoping to create a shockwave. Spider-Man agilely leaps away, avoiding the tremor. He uses the opportunity to swing above you, dropping debris from a damaged building, dealing 12 damage.' },
 						],
-                    }
-                ]
-            },
-            goto: "next"
-        },
-        {
-            text: "Iron Man descended in a blaze of repulsor fire, landing heavily before Dreadlord Nexus. 'Nexus,' Tony Stark's voice echoed through his helmet, 'your little tantrum ends now. Stand down.' Nexus simply tilted his head, a cold amusement in his eyes. 'Stark, you mistake a necessary evolution for a tantrum. This world is a flawed design, and I am the architect of its correction.'",
-            fight: {
-				opponentAtackPower: 9,
-                rounds: [
-                    {
-                        attack_options: [
-                            { name: 'Repulsor Blast (A focused energy beam from the gauntlets)', sucess: true, outcome: 'A powerful repulsor blast strikes Nexus, forcing him to shield himself with a dark energy barrier.' },
-							{ name: 'Flight Maneuver (Quickly dodging an attack using the suit\'s thrusters)', sucess: true, outcome: 'Iron Man boosts away, narrowly avoiding a wave of destructive energy.' },
-							{ name: 'Unibeam (A powerful energy beam from the chest arc reactor)', sucess: false, outcome: 'Nexus telekinetically redirects the Unibeam, causing it to strike a nearby vehicle. He then unleashes a barrage of dark energy shards, hitting Iron Man for 9 damage.' },
-							{ name: 'Energy Shield (Deploying a personal energy shield)', sucess: false, outcome: 'Nexus unleashes a concentrated blast of chaotic energy that overwhelms the shield, the feedback jarring Iron Man for 9 damage.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Shadow Tendrils', sucess: false, outcome: 'Shadowy appendages erupt from the ground, attempting to grasp Spider-Man. He anticipates the attack, using his webs to swing through the chaotic environment, narrowly avoiding them. He lands on a nearby rooftop, assessing the situation, then fires a web-shot that grazes your arm, dealing 12 damage.' },
+                            { name: 'Mind Blast', sucess: false, outcome: 'A focused beam of mental energy shoots towards Spider-Man. His spider-sense tingles, allowing him to dodge the direct hit, though the residual force buffets him. He shoots a web-line towards your face, trying to blind you, dealing 12 damage.' },
+                            { name: 'Mutagenic Spores', sucess: false, outcome: 'You release a cloud of toxic spores. Spider-Man quickly covers his face with his mask and retreats, his agility allowing him to evade the worst of the cloud. He fires a web-grenade, hoping to create a diversion, the blast knocking you back slightly and dealing 12 damage.' },
+                            { name: 'Crushing Grip', sucess: true, outcome: 'You lunge forward, your enhanced strength allowing you to grab Spider-Man mid-swing. He struggles in your grasp as you squeeze, the metallic tang of his suit filling the air. He gasps for breath.' },
 						],
-                    },
-                    {
-                        attack_options: [
-                            { name: 'Sonic Repulsor (A repulsor blast with added sonic frequency)', sucess: false, outcome: 'Nexus creates a field of distorted gravity, causing the sonic blast to waver and miss. He then slams Iron Man with a gravitational pulse, dealing 9 damage.' },
-								{ name: 'Arc Reactor Overload (A risky burst of energy from the arc reactor)', sucess: false, outcome: 'Nexus anticipates the energy surge and drains a portion of it, using it to amplify his own attack, hitting Iron Man for 9 damage.' },
-								{ name: 'Gauntlet Laser (A precise laser beam from the gauntlet)', sucess: true, outcome: 'A focused laser beam strikes Nexus\'s shoulder, causing him to hiss in pain.' },
-								{ name: 'Defensive Counter (Using the armor to block and retaliate)', sucess: true, outcome: 'Iron Man blocks a physical attack and delivers a powerful counter-punch with his armored fist.' }
-							],
-                    }
-                ]
-            },
-            goto: "next"
-        },
-        {
-            text: "In the desolate ruins of a once-bustling city, a dark energy pulsed from a hidden chamber. Dreadlord Nexus knelt within, his form flickering as he absorbed the residual energies from his battles, his wounds slowly knitting back together. The air crackled with dark potential as he meditated, his resolve hardening.",
-			recharge: 28,
-            goto: "next"
-        },
-        {
-            text: "Captain America stood his ground amidst the chaos, his shield emblazoned with hope against the encroaching darkness. 'Nexus!' his voice boomed, filled with unwavering determination. 'This ends here! You won't destroy this world!' Dreadlord Nexus descended slowly, his eyes burning with cold fury. 'Rogers,' he sneered, 'your idealism is your weakness. This world must be purged for true peace to take hold.'",
-            fight: {
-				opponentAtackPower: 35,
-                rounds: [
-                    {
-                        attack_options: [
-                            { name: 'Shield Throw (A precise throw of the vibranium shield)', sucess: true, outcome: 'The shield strikes Nexus squarely, disrupting his concentration and causing a ripple in his energy field.' },
-							{ name: 'Agile Dodge (Evading an attack with enhanced reflexes)', sucess: true, outcome: 'Captain America swiftly sidesteps a blast of dark energy.' },
-							{ name: 'Charging Strike (A powerful punch delivered with momentum)', sucess: false, outcome: 'Nexus erects a telekinetic barrier, stopping the punch. He then lashes out with a tendril of dark energy, hitting Captain America for 35 damage.' },
-							{ name: 'Defensive Stance (Bracing behind the vibranium shield)', sucess: false, outcome: 'Nexus unleashes a concentrated energy beam that cracks Captain America\'s shield, the force knocking him back and dealing 35 damage.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Venomous Injection', sucess: false, outcome: 'You attempt to pierce Spider-Man with a poisoned spike. He twists in your grip, managing to avoid the direct hit, but the spike grazes his side. He winces in pain but manages to break free, webbing to a higher vantage point and shooting several web-balls at you, dealing 12 damage.' },
+                            { name: 'Telekinetic Throw', sucess: false, outcome: 'You telekinetically hurl a chunk of rubble at Spider-Man. He expertly webs it, redirecting the debris harmlessly. He then launches a series of web-shooters at your eyes, dealing 12 damage.' },
+                            { name: 'Despair Inducement', sucess: false, outcome: 'You project waves of despair, hoping to break Spider-Man’s spirit. He falters for a moment, the weight of the city’s fear pressing down on him, but his unwavering resolve quickly returns. He quips a defiant remark and shoots a web-line, pulling you forward and delivering a punch, dealing 12 damage.' },
+                            { name: 'Seismic Smash', sucess: true, outcome: 'With a roar, you bring both fists down on the street. A massive fissure rips through the ground, catching Spider-Man off guard. He tumbles into the crevice, momentarily stunned.' },
 						],
-                    },
-                    {
-                        attack_options: [
-                            { name: 'Shield Bash (A close-quarters strike with the shield)', sucess: true, outcome: 'Captain America slams his shield into Nexus\'s chest, staggering him.' },
-							{ name: 'Tactical Roll (Evading a ground-based attack)', sucess: true, outcome: 'Captain America rolls out of the way as the ground beneath him erupts with dark energy.' },
-							{ name: 'Inspiring Shout (Attempting to disrupt the opponent with a rallying cry)', sucess: false, outcome: 'Nexus\'s dark influence washes over Captain America, momentarily weakening his resolve.' },
-							{ name: 'Ricochet Throw (Bouncing the shield off the environment for an unpredictable attack)', sucess: false, outcome: 'Nexus anticipates the trajectory and catches the shield mid-air, redirecting a blast of energy at Captain America for 35 damage.' }
+                    },
+                ]
+            }
+        },
+        {
+            text: "Battered but victorious, you retreat into the labyrinthine underbelly of the city. The encounter with Spider-Man has cost you, and the need to replenish your power is paramount. In the shadows, your unnatural energies begin to coalesce, mending your wounds and preparing you for the next confrontation.",
+			recharge: 40
+        },
+        {
+            text: "Emerging from your subterranean sanctuary, you find yourself in the desolate ruins of a once-grand museum, now eerily silent. Suddenly, a familiar web-line snaps, and Spider-Man drops down, his posture radiating grim determination. He has tracked you.",
+            fight: {
+				opponentAtackPower: 18,
+                rounds: [
+                    {
+                        attack_options: [
+                            { name: 'Shadow Bolt', sucess: false, outcome: 'A bolt of pure shadow energy hurtles towards Spider-Man. He nimbly dodges, the dark energy dissipating against a marble column. He fires a sticky web, trying to restrain your movement, dealing 15 damage as it hits your arm.' },
+                            { name: 'Illusory Double', sucess: false, outcome: 'You create a fleeting illusion of yourself charging in one direction while you move in another. Spider-Man’s senses detect the deception. He swings towards your real position, delivering a swift kick, dealing 15 damage.' },
+                            { name: 'Telekinetic Shards', sucess: false, outcome: 'You unleash a barrage of sharp, telekinetically controlled shards of glass. Spider-Man weaves through the debris with practiced ease, his agility unmatched. He shoots a web-line to swing around you, the momentum causing a glancing blow that deals 15 damage.' },
+                            { name: 'Constricting Tendrils', sucess: true, outcome: 'Ebon tendrils erupt from the shattered floor, snaking towards Spider-Man. They wrap around his legs, momentarily hindering his movement. He struggles to break free.' },
 						],
-                    },
-					{
-                        attack_options: [
-                            { name: 'Shield Charge (A full-force charge with the shield leading)', sucess: false, outcome: 'Nexus creates a vortex of dark energy, halting Captain America\'s charge and throwing him back, dealing 35 damage.' },
-							{ name: 'Precision Strike (A calculated strike aimed at a vulnerable point)', sucess: true, outcome: 'Captain America lands a solid punch to Nexus\'s exposed side.' },
-							{ name: 'Defensive Block (Using the shield to absorb a powerful blow)', sucess: true, outcome: 'Captain America manages to block a powerful energy blast with his shield, though the impact still shakes him.' },
-							{ name: 'Disorienting Throw (A quick shield throw aimed to distract)', sucess: false, outcome: 'Nexus swats the shield away effortlessly and retaliates with a swift energy strike, hitting Captain America for 35 damage.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Mental Domination', sucess: false, outcome: 'You attempt to seize control of Spider-Man’s mind. He clutches his head, momentarily staggered by the psychic intrusion, but his will proves too strong. He fires a taser web, hoping to shock you, the electricity jolting you for 15 damage.' },
+                            { name: 'Energy Drain', sucess: false, outcome: 'You project a field of energy drain. Spider-Man quickly leaps away, sensing the siphoning effect. He fires a web-line, trying to pull you off balance, the yank causing you to stumble and take 15 damage as you hit the ground.' },
+                            { name: 'Sonic Scream', sucess: false, outcome: 'A piercing sonic scream erupts from your throat. Spider-Man claps his hands over his ears, wincing, but his suit’s dampening technology mitigates the worst of the assault. He throws a smoke bomb to obscure your vision, the impact dealing 15 damage.' },
+                            { name: 'Brutal Slam', sucess: true, outcome: 'Exploiting his momentary entanglement, you grab Spider-Man and slam him against a crumbling wall. He groans in pain, the impact jarring him.' },
 						],
-                    }
-                ]
-            },
-            goto: "next"
-        },
-        {
-            text: "In a swirling vortex of mystic energy, Doctor Strange confronted Dreadlord Nexus. 'Nexus,' his voice echoed with arcane power, 'your path leads only to oblivion. There is still a chance for redemption.' Dreadlord Nexus laughed, a chilling sound that reverberated through the dimensions. 'Redemption? Sorcerer, you cling to outdated concepts. This world requires not salvation, but a complete and utter reset!'",
-            fight: {
-				opponentAtackPower: 45,
-                rounds: [
-					{
-					attack_options: [
-                            { name: 'Mystic Bolts (Projectiles of pure magical energy)', sucess: true, outcome: 'Mystic bolts strike Nexus, disrupting his energy flow and causing him to stagger.' },
-							{ name: 'Mirror Dimension (Briefly trapping the opponent in an alternate reality)', sucess: true, outcome: 'Nexus finds himself momentarily disoriented within a shifting, mirrored landscape.' },
-							{ name: 'Astral Tether (Attempting to bind the opponent with astral energy)', sucess: false, outcome: 'Nexus\'s raw power lashes out, severing the astral tether and sending a jolt of psychic feedback to Doctor Strange, dealing 45 damage.' },
-							{ name: 'Shield of Seraphim (Conjuring a protective magical shield)', sucess: false, outcome: 'Nexus unleashes a wave of chaotic energy that cracks the Shield of Seraphim, the impact staggering Doctor Strange for 45 damage.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Venomous Cloud', sucess: false, outcome: 'You release a cloud of corrosive gas. Spider-Man quickly webs up his airways and retreats, the gas eating away at the ancient artifacts. He fires a web net, trying to trap you, the sticky substance hindering your movement and dealing 15 damage as it burns slightly.' },
+                            { name: 'Psychic Assault', sucess: false, outcome: 'You unleash a focused psychic attack. Spider-Man’s spider-sense flares violently, allowing him to narrowly avoid the brunt of the force. He counters with a rapid series of web-shots, each hitting and dealing 15 damage.' },
+                            { name: 'Ground Rupture', sucess: false, outcome: 'You cause the ground beneath Spider-Man to crack and shift. He uses his webs to maintain his balance, swinging precariously above the chasm. He shoots a web-line towards your face, dealing 15 damage as it strikes.' },
+                            { name: 'Crippling Blow', sucess: true, outcome: 'Seizing an opening, you deliver a powerful, bone-jarring blow to Spider-Man. He collapses to the ground, momentarily winded.' },
 						],
-                    },
-					{
-					attack_options: [
-                            { name: 'Crimson Bands of Cyttorak (Binding the opponent with powerful magical bands)', sucess: false, outcome: 'Nexus unleashes a surge of dark energy that shatters the Crimson Bands before they can fully constrict him. The released energy strikes Doctor Strange for 45 damage.' },
-							{ name: 'Teleportation (Instantly moving to a different location)', sucess: true, outcome: 'Doctor Strange teleports behind Nexus, preparing another attack.' },
-							{ name: 'Eye of Agamotto (Unleashing a disorienting blast of pure energy)', sucess: false, outcome: 'Nexus focuses his own dark energy, countering the Eye\'s blast and creating a shockwave that hits Doctor Strange for 45 damage.' },
-							{ name: 'Dimensional Rift (Opening a small, temporary portal)', sucess: true, outcome: 'Doctor Strange opens a small rift, sending a blast of Nexus\'s own energy back at him.' }
+                    },
+                ]
+            }
+        },
+        {
+            text: "Once again, you stand victorious, though the resilience of the web-slinger is undeniable. You disappear into the shadows, seeking another respite to recover your strength before facing the next inevitable challenge. The world's protectors are persistent, but your resolve remains unbroken.",
+			recharge: 35
+        },
+        {
+            text: "Your path of destruction leads you to the mystical Sanctum Sanctorum, its ancient wards now disrupted by your malevolent presence. Dr. Stephen Strange appears, his eyes radiating arcane power, the Cloak of Levitation swirling around him like a sentient guardian. The air hums with raw magical energy.",
+            fight: {
+				opponentAtackPower: 16,
+                rounds: [
+                    {
+                        attack_options: [
+                            { name: 'Shadow Lance', sucess: false, outcome: 'A lance of solidified shadow pierces the air towards Doctor Strange. He effortlessly conjures a shimmering mystical shield, deflecting the dark energy. Runes glow on the shield’s surface. The deflected energy strikes a nearby bookshelf, sending splinters your way, dealing 13 damage.' },
+                            { name: 'Mental Intrusion', sucess: false, outcome: 'You attempt to invade Doctor Strange’s mind, seeking to overwhelm his consciousness. He closes his eyes, his brow furrowed in concentration, and erects powerful mental barriers, repelling your assault. He counters with a telepathic probe of his own, causing a sharp pain in your temples and dealing 13 damage.' },
+                            { name: 'Void Tendrils', sucess: false, outcome: 'Tendrils of pure void reach out to ensnare Doctor Strange. The Cloak of Levitation reacts instantly, whipping around him and deflecting the shadowy appendages. The Cloak then lashes out towards you, its mystical force hitting you for 13 damage.' },
+                            { name: 'Chaos Bolt', sucess: true, outcome: 'A raw bolt of chaotic energy erupts from your hand, unpredictable and volatile. Doctor Strange attempts to shield himself, but the energy twists and strikes him, causing him to stumble back, a flicker of surprise in his eyes.' },
 						],
-                    },
-                    {
-                        attack_options: [
-                             { name: 'Mystic Chain (Conjuring a chain of magical energy to bind and strike)', sucess: false, outcome: 'Nexus telekinetically manipulates the chain, turning it against Doctor Strange and dealing 45 damage.' },
-							{ name: 'Time Manipulation (Slowing down time in a localized area)', sucess: false, outcome: 'Nexus adapts, his movements becoming blurred and unpredictable, negating the time slow and striking Doctor Strange for 45 damage.' },
-							{ name: 'Illusion Casting (Creating a deceptive image to confuse the opponent)', sucess: true, outcome: 'Doctor Strange creates a convincing illusion, causing Nexus to hesitate.' },
-        					{ name: 'Energy Absorption (Draining energy from the opponent)', sucess: true, outcome: 'Doctor Strange attempts to drain energy, weakening Nexus slightly.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Illusory Assault', sucess: false, outcome: 'You conjure terrifying illusions to disorient Doctor Strange – grotesque creatures and collapsing realities. He remains unfazed, his gaze steady as he sees through the phantasms. He weaves intricate hand gestures, preparing a counter-spell. The dissipating illusions leave a residual magical energy that shocks you for 13 damage.' },
+                            { name: 'Energy Drain Field', sucess: false, outcome: 'You project a field designed to drain magical energies. Doctor Strange steps back, the Cloak of Levitation pulling him away from the field’s influence. He summons glowing mystical bindings, one of which wraps around your arm and constricts, dealing 13 damage.' },
+                            { name: 'Sonic Disruption', sucess: false, outcome: 'A wave of disorienting sonic frequencies washes over Doctor Strange. He casts a protective enchantment, the air around him shimmering, mitigating the sonic assault. He retaliates with a blast of pure arcane energy that strikes your chest, dealing 13 damage.' },
+                            { name: 'Telekinetic Crush', sucess: true, outcome: 'You focus your will, attempting to crush Doctor Strange with immense telekinetic force. He strains against the invisible pressure, his magical aura flaring as he struggles to maintain his form. He gasps for air.' },
 						],
-                    },
-                    {
-                        attack_options: [
-                            { name: 'Summoned Construct (Conjuring a magical being to fight)', sucess: false, outcome: 'Nexus unleashes a chaotic energy blast that obliterates the construct, the backlash hitting Doctor Strange for 45 damage.' },
-							{ name: 'Mystic Barrage (Unleashing a flurry of magical attacks)', sucess: true, outcome: 'A barrage of mystic attacks strikes Nexus, pushing him back.' },
-							{ name: 'Binding Spell (Attempting to magically restrain the opponent)', sucess: false, outcome: 'Nexus resists the binding spell, his power overwhelming the magic and striking Doctor Strange for 45 damage.' },
-        					{ name: 'Karmic Retribution (Reflecting damage back at the attacker)', sucess: true, outcome: 'Doctor Strange channels Nexus\'s own energy back at him, causing him pain.' }
+                    },
+                    {
+                        attack_options: [
+                            { name: 'Shadow Miasma', sucess: false, outcome: 'You release a cloud of suffocating shadow. Doctor Strange conjures a swirling vortex of light, dispelling the darkness. He then unleashes a barrage of mystical projectiles, one of which hits your leg, dealing 13 damage.' },
+                            { name: 'Psychic Drain', sucess: false, outcome: 'You attempt to siphon Doctor Strange’s psychic energy. He focuses his mind, drawing upon ancient reserves of power, and repels your attempt. He projects an image of binding runes, and the feedback from your failed attempt causes a psychic backlash, dealing 13 damage.' },
+                            { name: 'Dimensional Rift', sucess: false, outcome: 'You try to open a small, disorienting dimensional rift near Doctor Strange. He swiftly seals the anomaly with a flick of his wrist, the fabric of reality mending itself. He then conjures a mystical whip of pure energy that lashes out and strikes you, dealing 13 damage.' },
+                            { name: 'Soul Scythe', sucess: true, outcome: 'A spectral scythe of pure negative energy materializes in your hand, and you swing it towards Doctor Strange. He attempts to evade, but the scythe grazes his side, leaving a chilling cold in its wake. He cries out in pain.' },
 						],
-                    }
-                ]
-            },
-            goto: "next"
-        },
-        {
-            text: "Ignoring the fallen heroes, Malakor reached his final objective: a hidden nexus point where the fabric of reality was thin. With a triumphant roar, he unleashed the full extent of his power, tearing a hole in the universe. A wave of pure, destructive energy surged outwards, consuming everything in its path. The world, once vibrant and chaotic, began to unravel, dissolving into nothingness as Malakor watched, a chillingly satisfied smile on his face.",
-            goto: "end"
-        }
-    ]
+                    },
+                ]
+            }
+        },
+        {
+            text: "The Master of the Mystic Arts has fallen, his defenses shattered by your relentless assault. The Sanctum Sanctorum lies in ruins, its protective magic undone. You gather your strength, the echoes of arcane energies fueling your dark purpose. The final stage of your plan is within reach.",
+			recharge: 45
+        },
+        {
+            text: "The world lies broken before you. Your Great Scourge has swept across the globe, leaving once-vibrant cities as desolate husks. The heroes who dared to oppose you are defeated, their sacrifices ultimately futile. A grim silence descends as you stand amidst the ruins, the architect of a new, desolate world. The balance has been reset, as you envisioned. Your reign has begun.",
+        }
+    ]
 };
 
 export default gameData;
