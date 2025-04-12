@@ -20,10 +20,10 @@ function GameEngine() {
     setRecharged(false);
     setCurrentRoundIndex(0);
     setCurrentAttempt(1);
-    if (goto == "next") {
+    if (goto === "next") {
       setFightOutcome('');
       setCurrentChapterIndex(currentChapterIndex + 1);
-    } else if (goto == "end") {
+    } else if (goto === "end") {
       setFightOutcome('');
       setCurrentChapterIndex(0);
       setCurrentAttempt(0);
@@ -33,7 +33,7 @@ function GameEngine() {
 
   const handleAttack = (attack) => {
     setFightOutcome(attack.outcome);
-    if (attack.sucess == true) 
+    if (attack.sucess === true) 
     {
       setCurrentRoundIndex(currentRoundIndex + 1);
     } else {
@@ -45,7 +45,7 @@ function GameEngine() {
   };
 
   const rechargeHealth = () => {
-    if (recharged == true)
+    if (recharged === true)
        return;
 
     const rechargedHealth = character.health + currentChapter.recharge;

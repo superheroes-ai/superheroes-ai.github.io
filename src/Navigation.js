@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navigation({}) {
+function Navigation() {
   return (
     <div>
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
