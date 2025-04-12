@@ -73,7 +73,7 @@ function GameEngine() {
                         <h4>Fight! Round {currentAttempt}</h4>
                         <ul>
                         {inFightWithRound.attack_options.map((attack, index) => (
-                          <li>{attack.name} <a href="#" onClick={() => handleAttack(attack)}>Use this attack</a></li>
+                          <li>{attack.name} <a href="/#" onClick={() => handleAttack(attack)}>Use this attack</a></li>
                         ))}
                         </ul>
                         </div>
@@ -81,9 +81,9 @@ function GameEngine() {
                     </p>
                   <p>
                     <ul>
-                      {!isAlive && (<li><span><a href="#" onClick={() => goToChapter("end")}>Start over</a> <LuRepeat2/></span></li>)}
-                      {isAlive && currentChapter.recharge && (<li><span><a href="#" onClick={rechargeHealth}>Take time to recover</a> <RiWaterFlashFill color="green" /></span></li>)}
-                      {isAlive && !inFightWithRound && (<li><a href="#" onClick={() => goToChapter("next")}>Go to next chapter</a> <TbPlayerTrackNextFilled /> </li>)}
+                      {!isAlive && (<li><span><a href="/#" onClick={() => goToChapter("end")}>Start over</a> <LuRepeat2/></span></li>)}
+                      {isAlive && currentChapter.recharge && (<li><span><a href="/#" onClick={rechargeHealth}>Take time to recover</a> <RiWaterFlashFill color="green" /></span></li>)}
+                      {isAlive && !inFightWithRound && (<li><a href="/#" onClick={() => goToChapter("next")}>Go to next chapter</a> <TbPlayerTrackNextFilled /> </li>)}
                     </ul>
                   </p>
               </div>
