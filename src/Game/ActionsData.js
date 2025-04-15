@@ -1,13 +1,12 @@
-// TO:DO add placeholders for the values
 const actionsData = {
     chapter: 'Chapter',
-    yourHealthIncreased: 'Your health increased with',
-    yourHealthDecreased: 'Your health decreased with',
-    seeYourAttackOptions: 'See your attack options',
+    yourHealthIncreased: 'Your health increased with ##health##!',
+    yourHealthDecreased: 'Your health decreased with ##health##!',
+    seeYourOptions: 'See your ##type## options',
     startOver: 'Start over',
     recover: 'Recover',
     goToNextChapter: 'Go to next chapter',
-    health: 'Health'
+    health: 'Health',
 };
 
 export default actionsData;
