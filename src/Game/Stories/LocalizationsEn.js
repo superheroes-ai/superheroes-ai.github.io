@@ -7,6 +7,7 @@ const actionsData = {
     recover: 'Recover',
     goToNextChapter: 'Go to next chapter',
     health: 'Health',
+    tryToRunAway: 'Try to run away from the fight',
 };
 
 export default actionsData;
